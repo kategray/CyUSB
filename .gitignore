@@ -1,7 +1,12 @@
-# Build artifacts
+# Visual Studio artifacts
 *.exe
 *.pdb
 *.dll
+*.user
+*.force
+*.cache
+*.txt
+.vs/
 
 # Reports
 *.htm
