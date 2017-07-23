@@ -1,0 +1,8 @@
+# Build artifacts
+*.exe
+*.pdb
+*.dll
+
+# Reports
+*.htm
+*.keep

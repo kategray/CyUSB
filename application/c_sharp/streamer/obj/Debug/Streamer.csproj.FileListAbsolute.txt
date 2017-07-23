@@ -1,0 +1,9 @@
+C:\Users\kateb\Documents\GitHub\CyUSB\application\c_sharp\streamer\obj\Debug\Streamer.csprojResolveAssemblyReference.cache
+C:\Users\kateb\Documents\GitHub\CyUSB\application\c_sharp\streamer\obj\Debug\Streamer.Form1.resources
+C:\Users\kateb\Documents\GitHub\CyUSB\application\c_sharp\streamer\obj\Debug\Streamer.csproj.GenerateResource.Cache
+C:\Users\kateb\Documents\GitHub\CyUSB\application\c_sharp\streamer\bin\Debug\Streamer.exe
+C:\Users\kateb\Documents\GitHub\CyUSB\application\c_sharp\streamer\bin\Debug\Streamer.pdb
+C:\Users\kateb\Documents\GitHub\CyUSB\application\c_sharp\streamer\bin\Debug\CyUSB.dll
+C:\Users\kateb\Documents\GitHub\CyUSB\application\c_sharp\streamer\bin\Debug\CyUSB.pdb
+C:\Users\kateb\Documents\GitHub\CyUSB\application\c_sharp\streamer\obj\Debug\Streamer.exe
+C:\Users\kateb\Documents\GitHub\CyUSB\application\c_sharp\streamer\obj\Debug\Streamer.pdb

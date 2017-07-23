@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CyUSB", "CyAPI.vcproj", "{DC1234B1-BDF4-400C-B93E-59A8D5CB6D50}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Streamer", "..\..\application\cpp\streamer\Streamer.vcproj", "{4B29ABC5-DE66-44B7-B6DE-8F7BBFA0C02A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulkLoop", "..\..\application\cpp\bulkloop\BulkLoop.vcproj", "{06A771E0-C577-4910-AF4E-C06B4AFC2BEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC1234B1-BDF4-400C-B93E-59A8D5CB6D50}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DC1234B1-BDF4-400C-B93E-59A8D5CB6D50}.Debug|Win32.Build.0 = Debug|Win32
+		{DC1234B1-BDF4-400C-B93E-59A8D5CB6D50}.Debug|x64.ActiveCfg = Debug|x64
+		{DC1234B1-BDF4-400C-B93E-59A8D5CB6D50}.Debug|x64.Build.0 = Debug|x64
+		{DC1234B1-BDF4-400C-B93E-59A8D5CB6D50}.Release|Win32.ActiveCfg = Release|Win32
+		{DC1234B1-BDF4-400C-B93E-59A8D5CB6D50}.Release|Win32.Build.0 = Release|Win32
+		{DC1234B1-BDF4-400C-B93E-59A8D5CB6D50}.Release|x64.ActiveCfg = Release|x64
+		{DC1234B1-BDF4-400C-B93E-59A8D5CB6D50}.Release|x64.Build.0 = Release|x64
+		{4B29ABC5-DE66-44B7-B6DE-8F7BBFA0C02A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4B29ABC5-DE66-44B7-B6DE-8F7BBFA0C02A}.Debug|Win32.Build.0 = Debug|Win32
+		{4B29ABC5-DE66-44B7-B6DE-8F7BBFA0C02A}.Debug|x64.ActiveCfg = Debug|x64
+		{4B29ABC5-DE66-44B7-B6DE-8F7BBFA0C02A}.Debug|x64.Build.0 = Debug|x64
+		{4B29ABC5-DE66-44B7-B6DE-8F7BBFA0C02A}.Release|Win32.ActiveCfg = Release|Win32
+		{4B29ABC5-DE66-44B7-B6DE-8F7BBFA0C02A}.Release|Win32.Build.0 = Release|Win32
+		{4B29ABC5-DE66-44B7-B6DE-8F7BBFA0C02A}.Release|x64.ActiveCfg = Release|x64
+		{4B29ABC5-DE66-44B7-B6DE-8F7BBFA0C02A}.Release|x64.Build.0 = Release|x64
+		{06A771E0-C577-4910-AF4E-C06B4AFC2BEF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{06A771E0-C577-4910-AF4E-C06B4AFC2BEF}.Debug|Win32.Build.0 = Debug|Win32
+		{06A771E0-C577-4910-AF4E-C06B4AFC2BEF}.Debug|x64.ActiveCfg = Debug|x64
+		{06A771E0-C577-4910-AF4E-C06B4AFC2BEF}.Debug|x64.Build.0 = Debug|x64
+		{06A771E0-C577-4910-AF4E-C06B4AFC2BEF}.Release|Win32.ActiveCfg = Release|Win32
+		{06A771E0-C577-4910-AF4E-C06B4AFC2BEF}.Release|Win32.Build.0 = Release|Win32
+		{06A771E0-C577-4910-AF4E-C06B4AFC2BEF}.Release|x64.ActiveCfg = Release|x64
+		{06A771E0-C577-4910-AF4E-C06B4AFC2BEF}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

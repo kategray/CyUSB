@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildScript", "BuildScript", "{634929EB-B21F-42DF-B5D2-7D1A71D75F59}"
+	ProjectSection(SolutionItems) = preProject
+		build_csharp_app_llib.bat = build_csharp_app_llib.bat
+		clean.bat = clean.bat
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyUSB", "CyUSB.csproj", "{2839C09D-B34F-42F9-A11B-30C3988291E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulkLoop", "..\..\application\c_sharp\bulkloop\BulkLoop.csproj", "{5DBA4DB0-C3B6-442E-97DB-4BBD503E7D4E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2839C09D-B34F-42F9-A11B-30C3988291E3} = {2839C09D-B34F-42F9-A11B-30C3988291E3}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyControl", "..\..\application\c_sharp\controlcenter\CyControl.csproj", "{DE0F475A-5876-4B20-8623-3A602D9D9CBF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2839C09D-B34F-42F9-A11B-30C3988291E3} = {2839C09D-B34F-42F9-A11B-30C3988291E3}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streamer", "..\..\application\c_sharp\streamer\Streamer.csproj", "{D5C010EA-096A-485B-887B-DC8A48809827}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2839C09D-B34F-42F9-A11B-30C3988291E3} = {2839C09D-B34F-42F9-A11B-30C3988291E3}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2839C09D-B34F-42F9-A11B-30C3988291E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2839C09D-B34F-42F9-A11B-30C3988291E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2839C09D-B34F-42F9-A11B-30C3988291E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2839C09D-B34F-42F9-A11B-30C3988291E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DBA4DB0-C3B6-442E-97DB-4BBD503E7D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DBA4DB0-C3B6-442E-97DB-4BBD503E7D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DBA4DB0-C3B6-442E-97DB-4BBD503E7D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DBA4DB0-C3B6-442E-97DB-4BBD503E7D4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE0F475A-5876-4B20-8623-3A602D9D9CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE0F475A-5876-4B20-8623-3A602D9D9CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE0F475A-5876-4B20-8623-3A602D9D9CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE0F475A-5876-4B20-8623-3A602D9D9CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5C010EA-096A-485B-887B-DC8A48809827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C010EA-096A-485B-887B-DC8A48809827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5C010EA-096A-485B-887B-DC8A48809827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5C010EA-096A-485B-887B-DC8A48809827}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(RationalClearCase) = preSolution
+		SourceControlProvider = RationalClearCase
+	EndGlobalSection
+EndGlobal
