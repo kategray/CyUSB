@@ -1,13 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CyUSB", "CyAPI.vcxproj", "{DC1234B1-BDF4-400C-B93E-59A8D5CB6D50}"
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CyUSB", "CyAPI.vcproj", "{DC1234B1-BDF4-400C-B93E-59A8D5CB6D50}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Streamer", "..\..\application\cpp\streamer\Streamer.vcxproj", "{4B29ABC5-DE66-44B7-B6DE-8F7BBFA0C02A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Streamer", "..\..\application\cpp\streamer\Streamer.vcproj", "{4B29ABC5-DE66-44B7-B6DE-8F7BBFA0C02A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulkLoop", "..\..\application\cpp\bulkloop\BulkLoop.vcxproj", "{06A771E0-C577-4910-AF4E-C06B4AFC2BEF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulkLoop", "..\..\application\cpp\bulkloop\BulkLoop.vcproj", "{06A771E0-C577-4910-AF4E-C06B4AFC2BEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
