@@ -117,8 +117,19 @@ namespace CyControl
             DescText.Text = "";
 
             foreach (USBDevice dev in usbDevices)
-                DeviceTreeView.Nodes.Add(dev.Tree);
+            {
+                // Skip HIDI2C devices if appropriate
+                if (cbHidI2C.Checked && ("HIDI2C Device" == dev.Product))
+                {
+                    continue;
+                }
+                else if (cbEmpty.Checked && (("" == dev.Product) || (null == dev.Product)))
+                {
+                    continue;
+                }
 
+                DeviceTreeView.Nodes.Add(dev.Tree);
+            }
         }
 
         /* Summary
@@ -3046,6 +3057,16 @@ namespace CyControl
         {
             StatLabel.Text = "Cypress Boot Programmer Device Not Found";
             Refresh();
+        }
+
+        private void cbHidI2C_CheckedChanged(object sender, EventArgs e)
+        {
+            RefreshDeviceTree();
+        }
+
+        private void cbEmpty_CheckedChanged(object sender, EventArgs e)
+        {
+            RefreshDeviceTree();
         }
     }
 

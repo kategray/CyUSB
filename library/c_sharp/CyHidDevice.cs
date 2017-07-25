@@ -190,7 +190,9 @@ namespace CyUSB
             _Outputs = new CyHidReport(HIDP_REPORT_TYPE.HidP_Output, _Capabilities, PreParsedData);
             _Features = new CyHidReport(HIDP_REPORT_TYPE.HidP_Feature, _Capabilities, PreParsedData);
 
-            PInvoke.HidD_FreePreparsedData(PreParsedData);
+            if (null != PreParsedData) {
+                PInvoke.HidD_FreePreparsedData(PreParsedData);
+            }
             PreParsedData = null;
 
             byte[] buffer = new byte[512];

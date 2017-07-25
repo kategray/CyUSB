@@ -194,8 +194,11 @@ namespace CyControl
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.OutputBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.IsPacket = new System.Windows.Forms.CheckBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.DataXferBtn = new System.Windows.Forms.Button();
+            this.FileXferBtn = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
+            this.IsPacket = new System.Windows.Forms.CheckBox();
             this.XferDataBox = new System.Windows.Forms.MaskedTextBox();
             this.wValueBox = new System.Windows.Forms.TextBox();
             this.ReqCodeBox = new System.Windows.Forms.TextBox();
@@ -212,21 +215,22 @@ namespace CyControl
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.FileXferBtn = new System.Windows.Forms.Button();
-            this.DataXferBtn = new System.Windows.Forms.Button();
             this.NumBytesBox = new System.Windows.Forms.TextBox();
             this.XferTextBox = new System.Windows.Forms.TextBox();
             this.DriversTab = new System.Windows.Forms.TabPage();
+            this.cbHidI2C = new System.Windows.Forms.CheckBox();
+            this.cbEmpty = new System.Windows.Forms.CheckBox();
+            this.lblFilter = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.CyUSBDeviceBox = new System.Windows.Forms.CheckBox();
             this.HIDDeviceBox = new System.Windows.Forms.CheckBox();
             this.MSCDeviceBox = new System.Windows.Forms.CheckBox();
             this.FOpenDialog = new System.Windows.Forms.OpenFileDialog();
             this.FSave = new System.Windows.Forms.SaveFileDialog();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.StatusBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Split1)).BeginInit();
             this.Split1.Panel1.SuspendLayout();
             this.Split1.Panel2.SuspendLayout();
             this.Split1.SuspendLayout();
@@ -236,21 +240,22 @@ namespace CyControl
             this.XferTab.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.DriversTab.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.DriversTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Silver;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.programFX2ToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(899, 26);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(16, 4, 0, 4);
+            this.menuStrip1.Size = new System.Drawing.Size(1798, 53);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -259,13 +264,13 @@ namespace CyControl
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(40, 22);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(75, 45);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(178, 46);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -275,7 +280,7 @@ namespace CyControl
             this.fX2ToolStripMenuItem,
             this.fX3ToolStripMenuItem});
             this.programFX2ToolStripMenuItem.Name = "programFX2ToolStripMenuItem";
-            this.programFX2ToolStripMenuItem.Size = new System.Drawing.Size(75, 22);
+            this.programFX2ToolStripMenuItem.Size = new System.Drawing.Size(144, 45);
             this.programFX2ToolStripMenuItem.Text = "Program";
             this.programFX2ToolStripMenuItem.Click += new System.EventHandler(this.programFX2ToolStripMenuItem_Click);
             // 
@@ -290,14 +295,14 @@ namespace CyControl
             this.ProgramFX2runMenuItem});
             this.fX2ToolStripMenuItem.Enabled = false;
             this.fX2ToolStripMenuItem.Name = "fX2ToolStripMenuItem";
-            this.fX2ToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.fX2ToolStripMenuItem.Size = new System.Drawing.Size(181, 46);
             this.fX2ToolStripMenuItem.Text = "FX2";
             // 
             // ProgramFX2RamMenuItm
             // 
             this.ProgramFX2RamMenuItm.Enabled = false;
             this.ProgramFX2RamMenuItm.Name = "ProgramFX2RamMenuItm";
-            this.ProgramFX2RamMenuItm.Size = new System.Drawing.Size(186, 22);
+            this.ProgramFX2RamMenuItm.Size = new System.Drawing.Size(326, 46);
             this.ProgramFX2RamMenuItm.Text = "RAM";
             this.ProgramFX2RamMenuItm.Click += new System.EventHandler(this.ProgE2Item_Click);
             // 
@@ -305,7 +310,7 @@ namespace CyControl
             // 
             this.ProgramFX2smallEEPROMMenuItem.Enabled = false;
             this.ProgramFX2smallEEPROMMenuItem.Name = "ProgramFX2smallEEPROMMenuItem";
-            this.ProgramFX2smallEEPROMMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.ProgramFX2smallEEPROMMenuItem.Size = new System.Drawing.Size(326, 46);
             this.ProgramFX2smallEEPROMMenuItem.Text = "Small EEPROM";
             this.ProgramFX2smallEEPROMMenuItem.Click += new System.EventHandler(this.ProgE2Item_Click);
             // 
@@ -313,20 +318,20 @@ namespace CyControl
             // 
             this.ProgramFX264kBEEPROMMenuItem.Enabled = false;
             this.ProgramFX264kBEEPROMMenuItem.Name = "ProgramFX264kBEEPROMMenuItem";
-            this.ProgramFX264kBEEPROMMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.ProgramFX264kBEEPROMMenuItem.Size = new System.Drawing.Size(326, 46);
             this.ProgramFX264kBEEPROMMenuItem.Text = "64KB EEPROM";
             this.ProgramFX264kBEEPROMMenuItem.Click += new System.EventHandler(this.ProgE2Item_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(183, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(323, 6);
             // 
             // ProgramFX2haltMenuItem
             // 
             this.ProgramFX2haltMenuItem.Enabled = false;
             this.ProgramFX2haltMenuItem.Name = "ProgramFX2haltMenuItem";
-            this.ProgramFX2haltMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.ProgramFX2haltMenuItem.Size = new System.Drawing.Size(326, 46);
             this.ProgramFX2haltMenuItem.Text = "Halt";
             this.ProgramFX2haltMenuItem.Click += new System.EventHandler(this.HaltItem_Click);
             // 
@@ -334,7 +339,7 @@ namespace CyControl
             // 
             this.ProgramFX2runMenuItem.Enabled = false;
             this.ProgramFX2runMenuItem.Name = "ProgramFX2runMenuItem";
-            this.ProgramFX2runMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.ProgramFX2runMenuItem.Size = new System.Drawing.Size(326, 46);
             this.ProgramFX2runMenuItem.Text = "Run";
             this.ProgramFX2runMenuItem.Click += new System.EventHandler(this.HaltItem_Click);
             // 
@@ -346,28 +351,28 @@ namespace CyControl
             this.sPIFLASHToolStripMenuItem});
             this.fX3ToolStripMenuItem.Enabled = false;
             this.fX3ToolStripMenuItem.Name = "fX3ToolStripMenuItem";
-            this.fX3ToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.fX3ToolStripMenuItem.Size = new System.Drawing.Size(181, 46);
             this.fX3ToolStripMenuItem.Text = "FX3";
             // 
             // ProgramFX3Ram
             // 
             this.ProgramFX3Ram.Enabled = false;
             this.ProgramFX3Ram.Name = "ProgramFX3Ram";
-            this.ProgramFX3Ram.Size = new System.Drawing.Size(175, 22);
+            this.ProgramFX3Ram.Size = new System.Drawing.Size(298, 46);
             this.ProgramFX3Ram.Text = "RAM";
             this.ProgramFX3Ram.Click += new System.EventHandler(this.ProgramFX3Ram_Click);
             // 
             // ProgramFX3I2CEEPROM
             // 
             this.ProgramFX3I2CEEPROM.Name = "ProgramFX3I2CEEPROM";
-            this.ProgramFX3I2CEEPROM.Size = new System.Drawing.Size(175, 22);
+            this.ProgramFX3I2CEEPROM.Size = new System.Drawing.Size(298, 46);
             this.ProgramFX3I2CEEPROM.Text = "I2C EEPROM";
             this.ProgramFX3I2CEEPROM.Click += new System.EventHandler(this.ProgramFX3I2CEEPROM_Click);
             // 
             // sPIFLASHToolStripMenuItem
             // 
             this.sPIFLASHToolStripMenuItem.Name = "sPIFLASHToolStripMenuItem";
-            this.sPIFLASHToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.sPIFLASHToolStripMenuItem.Size = new System.Drawing.Size(298, 46);
             this.sPIFLASHToolStripMenuItem.Text = "SPI FLASH";
             this.sPIFLASHToolStripMenuItem.Click += new System.EventHandler(this.sPIFLASHToolStripMenuItem_Click);
             // 
@@ -377,26 +382,27 @@ namespace CyControl
             this.UsersGuide,
             this.AboutMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(48, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(92, 45);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // UsersGuide
             // 
             this.UsersGuide.Name = "UsersGuide";
-            this.UsersGuide.Size = new System.Drawing.Size(166, 22);
+            this.UsersGuide.Size = new System.Drawing.Size(285, 46);
             this.UsersGuide.Text = "Help Topics";
             this.UsersGuide.Click += new System.EventHandler(this.UsersGuide_Click);
             // 
             // AboutMenuItem
             // 
             this.AboutMenuItem.Name = "AboutMenuItem";
-            this.AboutMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.AboutMenuItem.Size = new System.Drawing.Size(285, 46);
             this.AboutMenuItem.Text = "About";
             this.AboutMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
             // 
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Record,
             this.Stop,
@@ -412,9 +418,10 @@ namespace CyControl
             this.Reset_Pipe,
             this.Abort_Pipe,
             this.URB_Stat});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 26);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 53);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(899, 25);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(1798, 48);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -424,7 +431,7 @@ namespace CyControl
             this.Record.Image = ((System.Drawing.Image)(resources.GetObject("Record.Image")));
             this.Record.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Record.Name = "Record";
-            this.Record.Size = new System.Drawing.Size(23, 22);
+            this.Record.Size = new System.Drawing.Size(44, 45);
             this.Record.Text = "Start Recording";
             this.Record.Click += new System.EventHandler(this.Record_Click);
             // 
@@ -435,7 +442,7 @@ namespace CyControl
             this.Stop.Image = ((System.Drawing.Image)(resources.GetObject("Stop.Image")));
             this.Stop.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Stop.Name = "Stop";
-            this.Stop.Size = new System.Drawing.Size(23, 22);
+            this.Stop.Size = new System.Drawing.Size(44, 45);
             this.Stop.Text = "Stop Recording";
             this.Stop.Click += new System.EventHandler(this.Stop_Click);
             // 
@@ -446,7 +453,7 @@ namespace CyControl
             this.Pause.Image = ((System.Drawing.Image)(resources.GetObject("Pause.Image")));
             this.Pause.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Pause.Name = "Pause";
-            this.Pause.Size = new System.Drawing.Size(23, 22);
+            this.Pause.Size = new System.Drawing.Size(44, 45);
             this.Pause.Text = "Insert 100ms wait";
             this.Pause.Click += new System.EventHandler(this.Pause_Click);
             // 
@@ -457,7 +464,7 @@ namespace CyControl
             this.Create_script.Image = ((System.Drawing.Image)(resources.GetObject("Create_script.Image")));
             this.Create_script.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Create_script.Name = "Create_script";
-            this.Create_script.Size = new System.Drawing.Size(23, 22);
+            this.Create_script.Size = new System.Drawing.Size(44, 45);
             this.Create_script.Text = "Create Script";
             this.Create_script.Click += new System.EventHandler(this.Create_script_Click);
             // 
@@ -468,7 +475,7 @@ namespace CyControl
             this.Script_parameters.Image = ((System.Drawing.Image)(resources.GetObject("Script_parameters.Image")));
             this.Script_parameters.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Script_parameters.Name = "Script_parameters";
-            this.Script_parameters.Size = new System.Drawing.Size(23, 22);
+            this.Script_parameters.Size = new System.Drawing.Size(44, 45);
             this.Script_parameters.Text = "Script Parameters";
             this.Script_parameters.Click += new System.EventHandler(this.Script_parameters_Click);
             // 
@@ -478,7 +485,7 @@ namespace CyControl
             this.load_button.Image = ((System.Drawing.Image)(resources.GetObject("load_button.Image")));
             this.load_button.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.load_button.Name = "load_button";
-            this.load_button.Size = new System.Drawing.Size(23, 22);
+            this.load_button.Size = new System.Drawing.Size(44, 45);
             this.load_button.Text = "Load Script";
             this.load_button.Click += new System.EventHandler(this.load_button_Click);
             // 
@@ -489,7 +496,7 @@ namespace CyControl
             this.play_button.Image = ((System.Drawing.Image)(resources.GetObject("play_button.Image")));
             this.play_button.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.play_button.Name = "play_button";
-            this.play_button.Size = new System.Drawing.Size(23, 22);
+            this.play_button.Size = new System.Drawing.Size(44, 45);
             this.play_button.Text = "Play Script";
             this.play_button.Click += new System.EventHandler(this.play_button_Click);
             // 
@@ -500,7 +507,7 @@ namespace CyControl
             this.Reset_device.Image = ((System.Drawing.Image)(resources.GetObject("Reset_device.Image")));
             this.Reset_device.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.Reset_device.Name = "Reset_device";
-            this.Reset_device.Size = new System.Drawing.Size(23, 22);
+            this.Reset_device.Size = new System.Drawing.Size(44, 45);
             this.Reset_device.Text = "Reset Device";
             this.Reset_device.Click += new System.EventHandler(this.Reset_device_Click);
             // 
@@ -511,7 +518,7 @@ namespace CyControl
             this.Reconnect_device.Image = ((System.Drawing.Image)(resources.GetObject("Reconnect_device.Image")));
             this.Reconnect_device.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.Reconnect_device.Name = "Reconnect_device";
-            this.Reconnect_device.Size = new System.Drawing.Size(23, 22);
+            this.Reconnect_device.Size = new System.Drawing.Size(44, 45);
             this.Reconnect_device.Text = "Reconnect Device";
             this.Reconnect_device.Click += new System.EventHandler(this.Reconnect_device_Click);
             // 
@@ -522,7 +529,7 @@ namespace CyControl
             this.Reset_endpoint.Image = ((System.Drawing.Image)(resources.GetObject("Reset_endpoint.Image")));
             this.Reset_endpoint.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.Reset_endpoint.Name = "Reset_endpoint";
-            this.Reset_endpoint.Size = new System.Drawing.Size(23, 22);
+            this.Reset_endpoint.Size = new System.Drawing.Size(44, 45);
             this.Reset_endpoint.Text = "Reset Endpoint";
             this.Reset_endpoint.Click += new System.EventHandler(this.Reset_endpoint_Click);
             // 
@@ -533,7 +540,7 @@ namespace CyControl
             this.Abort_endpoint.Image = ((System.Drawing.Image)(resources.GetObject("Abort_endpoint.Image")));
             this.Abort_endpoint.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.Abort_endpoint.Name = "Abort_endpoint";
-            this.Abort_endpoint.Size = new System.Drawing.Size(23, 22);
+            this.Abort_endpoint.Size = new System.Drawing.Size(44, 45);
             this.Abort_endpoint.Text = "Abort Endpoint";
             this.Abort_endpoint.Click += new System.EventHandler(this.Abort_endpoint_Click);
             // 
@@ -543,7 +550,7 @@ namespace CyControl
             this.Reset_Pipe.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.Reset_Pipe.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Reset_Pipe.Name = "Reset_Pipe";
-            this.Reset_Pipe.Size = new System.Drawing.Size(80, 22);
+            this.Reset_Pipe.Size = new System.Drawing.Size(160, 45);
             this.Reset_Pipe.Text = "Reset Pipe";
             this.Reset_Pipe.Click += new System.EventHandler(this.Reset_Pipe_Click);
             // 
@@ -553,7 +560,7 @@ namespace CyControl
             this.Abort_Pipe.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.Abort_Pipe.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Abort_Pipe.Name = "Abort_Pipe";
-            this.Abort_Pipe.Size = new System.Drawing.Size(78, 22);
+            this.Abort_Pipe.Size = new System.Drawing.Size(163, 45);
             this.Abort_Pipe.Text = "Abort Pipe";
             this.Abort_Pipe.Click += new System.EventHandler(this.Abort_Pipe_Click);
             // 
@@ -564,7 +571,7 @@ namespace CyControl
             this.URB_Stat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.URB_Stat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.URB_Stat.Name = "URB_Stat";
-            this.URB_Stat.Size = new System.Drawing.Size(71, 22);
+            this.URB_Stat.Size = new System.Drawing.Size(136, 45);
             this.URB_Stat.Text = "URB Stat";
             this.URB_Stat.Click += new System.EventHandler(this.URB_Stat_Click);
             // 
@@ -572,13 +579,14 @@ namespace CyControl
             // 
             this.StatusBar.BackColor = System.Drawing.SystemColors.Control;
             this.StatusBar.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.StatusBar.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.StatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel,
             this.StatLabel});
-            this.StatusBar.Location = new System.Drawing.Point(0, 661);
+            this.StatusBar.Location = new System.Drawing.Point(0, 1301);
             this.StatusBar.Name = "StatusBar";
-            this.StatusBar.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.StatusBar.Size = new System.Drawing.Size(899, 22);
+            this.StatusBar.Padding = new System.Windows.Forms.Padding(2, 0, 38, 0);
+            this.StatusBar.Size = new System.Drawing.Size(1798, 22);
             this.StatusBar.TabIndex = 2;
             // 
             // StatusLabel
@@ -596,8 +604,8 @@ namespace CyControl
             // Split1
             // 
             this.Split1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Split1.Location = new System.Drawing.Point(0, 51);
-            this.Split1.Margin = new System.Windows.Forms.Padding(4);
+            this.Split1.Location = new System.Drawing.Point(0, 101);
+            this.Split1.Margin = new System.Windows.Forms.Padding(8);
             this.Split1.Name = "Split1";
             // 
             // Split1.Panel1
@@ -608,9 +616,9 @@ namespace CyControl
             // Split1.Panel2
             // 
             this.Split1.Panel2.Controls.Add(this.TabPages);
-            this.Split1.Size = new System.Drawing.Size(899, 610);
-            this.Split1.SplitterDistance = 325;
-            this.Split1.SplitterWidth = 5;
+            this.Split1.Size = new System.Drawing.Size(1798, 1200);
+            this.Split1.SplitterDistance = 650;
+            this.Split1.SplitterWidth = 10;
             this.Split1.TabIndex = 3;
             // 
             // gb
@@ -621,11 +629,11 @@ namespace CyControl
             this.gb.Controls.Add(this.Cpu);
             this.gb.Controls.Add(this.textBox2);
             this.gb.Controls.Add(this.textBox1);
-            this.gb.Location = new System.Drawing.Point(0, 396);
-            this.gb.Margin = new System.Windows.Forms.Padding(4);
+            this.gb.Location = new System.Drawing.Point(0, 767);
+            this.gb.Margin = new System.Windows.Forms.Padding(8);
             this.gb.Name = "gb";
-            this.gb.Padding = new System.Windows.Forms.Padding(4);
-            this.gb.Size = new System.Drawing.Size(324, 199);
+            this.gb.Padding = new System.Windows.Forms.Padding(8);
+            this.gb.Size = new System.Drawing.Size(648, 386);
             this.gb.TabIndex = 1;
             this.gb.TabStop = false;
             this.gb.Text = "Change Parameters";
@@ -633,10 +641,10 @@ namespace CyControl
             // 
             // Ok
             // 
-            this.Ok.Location = new System.Drawing.Point(111, 146);
-            this.Ok.Margin = new System.Windows.Forms.Padding(4);
+            this.Ok.Location = new System.Drawing.Point(222, 283);
+            this.Ok.Margin = new System.Windows.Forms.Padding(8);
             this.Ok.Name = "Ok";
-            this.Ok.Size = new System.Drawing.Size(100, 28);
+            this.Ok.Size = new System.Drawing.Size(200, 54);
             this.Ok.TabIndex = 4;
             this.Ok.Text = "OK";
             this.Ok.UseVisualStyleBackColor = true;
@@ -645,38 +653,38 @@ namespace CyControl
             // Addr
             // 
             this.Addr.AutoSize = true;
-            this.Addr.Location = new System.Drawing.Point(0, 98);
-            this.Addr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Addr.Location = new System.Drawing.Point(0, 190);
+            this.Addr.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.Addr.Name = "Addr";
-            this.Addr.Size = new System.Drawing.Size(173, 17);
+            this.Addr.Size = new System.Drawing.Size(350, 32);
             this.Addr.TabIndex = 2;
             this.Addr.Text = "Maximum internal Address";
             // 
             // Cpu
             // 
             this.Cpu.AutoSize = true;
-            this.Cpu.Location = new System.Drawing.Point(0, 39);
-            this.Cpu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Cpu.Location = new System.Drawing.Point(0, 76);
+            this.Cpu.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.Cpu.Name = "Cpu";
-            this.Cpu.Size = new System.Drawing.Size(153, 17);
+            this.Cpu.Size = new System.Drawing.Size(308, 32);
             this.Cpu.TabIndex = 0;
             this.Cpu.Text = "Location of CPUCS reg";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(183, 98);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Location = new System.Drawing.Point(366, 190);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(8);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
+            this.textBox2.Size = new System.Drawing.Size(260, 38);
             this.textBox2.TabIndex = 3;
             this.textBox2.Text = "0x4000";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(183, 39);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(366, 76);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(8);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
+            this.textBox1.Size = new System.Drawing.Size(260, 38);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "0xE600";
             // 
@@ -685,9 +693,9 @@ namespace CyControl
             this.DeviceTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DeviceTreeView.HideSelection = false;
             this.DeviceTreeView.Location = new System.Drawing.Point(0, 0);
-            this.DeviceTreeView.Margin = new System.Windows.Forms.Padding(4);
+            this.DeviceTreeView.Margin = new System.Windows.Forms.Padding(8);
             this.DeviceTreeView.Name = "DeviceTreeView";
-            this.DeviceTreeView.Size = new System.Drawing.Size(325, 610);
+            this.DeviceTreeView.Size = new System.Drawing.Size(650, 1200);
             this.DeviceTreeView.TabIndex = 0;
             this.DeviceTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.DeviceTreeView_AfterSelect);
             // 
@@ -698,21 +706,21 @@ namespace CyControl
             this.TabPages.Controls.Add(this.DriversTab);
             this.TabPages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabPages.Location = new System.Drawing.Point(0, 0);
-            this.TabPages.Margin = new System.Windows.Forms.Padding(4);
+            this.TabPages.Margin = new System.Windows.Forms.Padding(8);
             this.TabPages.Name = "TabPages";
             this.TabPages.SelectedIndex = 0;
-            this.TabPages.Size = new System.Drawing.Size(569, 610);
+            this.TabPages.Size = new System.Drawing.Size(1138, 1200);
             this.TabPages.TabIndex = 0;
             this.TabPages.SelectedIndexChanged += new System.EventHandler(this.Form1_Resize);
             // 
             // DescrTab
             // 
             this.DescrTab.Controls.Add(this.DescText);
-            this.DescrTab.Location = new System.Drawing.Point(4, 25);
-            this.DescrTab.Margin = new System.Windows.Forms.Padding(4);
+            this.DescrTab.Location = new System.Drawing.Point(10, 48);
+            this.DescrTab.Margin = new System.Windows.Forms.Padding(8);
             this.DescrTab.Name = "DescrTab";
-            this.DescrTab.Padding = new System.Windows.Forms.Padding(4);
-            this.DescrTab.Size = new System.Drawing.Size(561, 581);
+            this.DescrTab.Padding = new System.Windows.Forms.Padding(8);
+            this.DescrTab.Size = new System.Drawing.Size(1118, 1142);
             this.DescrTab.TabIndex = 0;
             this.DescrTab.Text = "Descriptor Info";
             this.DescrTab.UseVisualStyleBackColor = true;
@@ -721,13 +729,13 @@ namespace CyControl
             // 
             this.DescText.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.DescText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DescText.Location = new System.Drawing.Point(4, 4);
-            this.DescText.Margin = new System.Windows.Forms.Padding(4);
+            this.DescText.Location = new System.Drawing.Point(8, 8);
+            this.DescText.Margin = new System.Windows.Forms.Padding(8);
             this.DescText.Multiline = true;
             this.DescText.Name = "DescText";
             this.DescText.ReadOnly = true;
             this.DescText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DescText.Size = new System.Drawing.Size(553, 573);
+            this.DescText.Size = new System.Drawing.Size(1102, 1126);
             this.DescText.TabIndex = 0;
             this.DescText.WordWrap = false;
             // 
@@ -735,11 +743,11 @@ namespace CyControl
             // 
             this.XferTab.BackColor = System.Drawing.Color.Gainsboro;
             this.XferTab.Controls.Add(this.tableLayoutPanel1);
-            this.XferTab.Location = new System.Drawing.Point(4, 25);
-            this.XferTab.Margin = new System.Windows.Forms.Padding(4);
+            this.XferTab.Location = new System.Drawing.Point(10, 48);
+            this.XferTab.Margin = new System.Windows.Forms.Padding(8);
             this.XferTab.Name = "XferTab";
-            this.XferTab.Padding = new System.Windows.Forms.Padding(4);
-            this.XferTab.Size = new System.Drawing.Size(561, 581);
+            this.XferTab.Padding = new System.Windows.Forms.Padding(8);
+            this.XferTab.Size = new System.Drawing.Size(1118, 1142);
             this.XferTab.TabIndex = 1;
             this.XferTab.Text = "Data Transfers";
             // 
@@ -750,12 +758,13 @@ namespace CyControl
             this.tableLayoutPanel1.Controls.Add(this.OutputBox, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 8);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(553, 573);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1102, 1126);
             this.tableLayoutPanel1.TabIndex = 23;
             // 
             // OutputBox
@@ -763,13 +772,13 @@ namespace CyControl
             this.OutputBox.BackColor = System.Drawing.SystemColors.Info;
             this.OutputBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OutputBox.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutputBox.Location = new System.Drawing.Point(4, 268);
-            this.OutputBox.Margin = new System.Windows.Forms.Padding(4);
+            this.OutputBox.Location = new System.Drawing.Point(8, 520);
+            this.OutputBox.Margin = new System.Windows.Forms.Padding(8);
             this.OutputBox.Multiline = true;
             this.OutputBox.Name = "OutputBox";
             this.OutputBox.ReadOnly = true;
             this.OutputBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.OutputBox.Size = new System.Drawing.Size(545, 301);
+            this.OutputBox.Size = new System.Drawing.Size(1086, 598);
             this.OutputBox.TabIndex = 25;
             // 
             // groupBox1
@@ -795,81 +804,131 @@ namespace CyControl
             this.groupBox1.Controls.Add(this.NumBytesBox);
             this.groupBox1.Controls.Add(this.XferTextBox);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(547, 258);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBox1.Size = new System.Drawing.Size(1090, 500);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Transfer parameters";
             // 
-            // IsPacket
+            // tableLayoutPanel2
             // 
-            this.IsPacket.AutoSize = true;
-            this.IsPacket.Location = new System.Drawing.Point(205, 95);
-            this.IsPacket.Margin = new System.Windows.Forms.Padding(4);
-            this.IsPacket.Name = "IsPacket";
-            this.IsPacket.Size = new System.Drawing.Size(85, 21);
-            this.IsPacket.TabIndex = 28;
-            this.IsPacket.Text = "PktMode";
-            this.IsPacket.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.Controls.Add(this.DataXferBtn, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.FileXferBtn, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Clear, 2, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(-154, 391);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1230, 97);
+            this.tableLayoutPanel2.TabIndex = 44;
+            // 
+            // DataXferBtn
+            // 
+            this.DataXferBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.DataXferBtn.AutoSize = true;
+            this.DataXferBtn.Location = new System.Drawing.Point(8, 8);
+            this.DataXferBtn.Margin = new System.Windows.Forms.Padding(8);
+            this.DataXferBtn.Name = "DataXferBtn";
+            this.DataXferBtn.Size = new System.Drawing.Size(394, 81);
+            this.DataXferBtn.TabIndex = 29;
+            this.DataXferBtn.Text = "Transfer Data";
+            this.DataXferBtn.UseVisualStyleBackColor = true;
+            this.DataXferBtn.Click += new System.EventHandler(this.DataXferBtn_Click);
+            // 
+            // FileXferBtn
+            // 
+            this.FileXferBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.FileXferBtn.AutoSize = true;
+            this.FileXferBtn.Enabled = false;
+            this.FileXferBtn.Location = new System.Drawing.Point(418, 8);
+            this.FileXferBtn.Margin = new System.Windows.Forms.Padding(8);
+            this.FileXferBtn.Name = "FileXferBtn";
+            this.FileXferBtn.Size = new System.Drawing.Size(394, 81);
+            this.FileXferBtn.TabIndex = 30;
+            this.FileXferBtn.Text = "Transfer File";
+            this.FileXferBtn.UseVisualStyleBackColor = true;
+            this.FileXferBtn.Visible = false;
+            this.FileXferBtn.Click += new System.EventHandler(this.FileXferBtn_Click);
             // 
             // Clear
             // 
             this.Clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Clear.AutoSize = true;
-            this.Clear.Location = new System.Drawing.Point(238, 7);
-            this.Clear.Margin = new System.Windows.Forms.Padding(4);
+            this.Clear.Location = new System.Drawing.Point(828, 8);
+            this.Clear.Margin = new System.Windows.Forms.Padding(8);
             this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(112, 28);
+            this.Clear.Size = new System.Drawing.Size(394, 81);
             this.Clear.TabIndex = 31;
             this.Clear.Text = "Clear Box";
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
+            // IsPacket
+            // 
+            this.IsPacket.AutoSize = true;
+            this.IsPacket.Location = new System.Drawing.Point(410, 184);
+            this.IsPacket.Margin = new System.Windows.Forms.Padding(8);
+            this.IsPacket.Name = "IsPacket";
+            this.IsPacket.Size = new System.Drawing.Size(165, 36);
+            this.IsPacket.TabIndex = 28;
+            this.IsPacket.Text = "PktMode";
+            this.IsPacket.UseVisualStyleBackColor = true;
+            // 
             // XferDataBox
             // 
-            this.XferDataBox.Location = new System.Drawing.Point(205, 39);
-            this.XferDataBox.Margin = new System.Windows.Forms.Padding(4);
+            this.XferDataBox.Location = new System.Drawing.Point(410, 76);
+            this.XferDataBox.Margin = new System.Windows.Forms.Padding(8);
             this.XferDataBox.Name = "XferDataBox";
             this.XferDataBox.PromptChar = ' ';
-            this.XferDataBox.Size = new System.Drawing.Size(335, 22);
+            this.XferDataBox.Size = new System.Drawing.Size(666, 38);
             this.XferDataBox.TabIndex = 25;
             this.XferDataBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.XferDataBox_KeyUp);
             // 
             // wValueBox
             // 
-            this.wValueBox.Location = new System.Drawing.Point(280, 177);
-            this.wValueBox.Margin = new System.Windows.Forms.Padding(4);
+            this.wValueBox.Location = new System.Drawing.Point(560, 343);
+            this.wValueBox.Margin = new System.Windows.Forms.Padding(8);
             this.wValueBox.Name = "wValueBox";
-            this.wValueBox.Size = new System.Drawing.Size(72, 22);
+            this.wValueBox.Size = new System.Drawing.Size(140, 38);
             this.wValueBox.TabIndex = 41;
             this.wValueBox.Text = "0x0000";
             // 
             // ReqCodeBox
             // 
-            this.ReqCodeBox.Location = new System.Drawing.Point(101, 177);
-            this.ReqCodeBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ReqCodeBox.Location = new System.Drawing.Point(202, 343);
+            this.ReqCodeBox.Margin = new System.Windows.Forms.Padding(8);
             this.ReqCodeBox.Name = "ReqCodeBox";
-            this.ReqCodeBox.Size = new System.Drawing.Size(55, 22);
+            this.ReqCodeBox.Size = new System.Drawing.Size(106, 38);
             this.ReqCodeBox.TabIndex = 39;
             this.ReqCodeBox.Text = "0x00";
             // 
             // wIndexBox
             // 
-            this.wIndexBox.Location = new System.Drawing.Point(451, 177);
-            this.wIndexBox.Margin = new System.Windows.Forms.Padding(4);
+            this.wIndexBox.Location = new System.Drawing.Point(902, 343);
+            this.wIndexBox.Margin = new System.Windows.Forms.Padding(8);
             this.wIndexBox.Name = "wIndexBox";
-            this.wIndexBox.Size = new System.Drawing.Size(72, 22);
+            this.wIndexBox.Size = new System.Drawing.Size(140, 38);
             this.wIndexBox.TabIndex = 43;
             this.wIndexBox.Text = "0x0000";
             // 
             // ReqCodeLabel
             // 
             this.ReqCodeLabel.AutoSize = true;
-            this.ReqCodeLabel.Location = new System.Drawing.Point(9, 180);
-            this.ReqCodeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ReqCodeLabel.Location = new System.Drawing.Point(18, 349);
+            this.ReqCodeLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.ReqCodeLabel.Name = "ReqCodeLabel";
-            this.ReqCodeLabel.Size = new System.Drawing.Size(73, 17);
+            this.ReqCodeLabel.Size = new System.Drawing.Size(144, 32);
             this.ReqCodeLabel.TabIndex = 38;
             this.ReqCodeLabel.Text = "Req code:";
             this.ReqCodeLabel.Visible = false;
@@ -877,10 +936,10 @@ namespace CyControl
             // wIndexLabel
             // 
             this.wIndexLabel.AutoSize = true;
-            this.wIndexLabel.Location = new System.Drawing.Point(388, 180);
-            this.wIndexLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.wIndexLabel.Location = new System.Drawing.Point(776, 349);
+            this.wIndexLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.wIndexLabel.Name = "wIndexLabel";
-            this.wIndexLabel.Size = new System.Drawing.Size(54, 17);
+            this.wIndexLabel.Size = new System.Drawing.Size(112, 32);
             this.wIndexLabel.TabIndex = 42;
             this.wIndexLabel.Text = "wIndex:";
             this.wIndexLabel.Visible = false;
@@ -888,10 +947,10 @@ namespace CyControl
             // wValueLabel
             // 
             this.wValueLabel.AutoSize = true;
-            this.wValueLabel.Location = new System.Drawing.Point(205, 180);
-            this.wValueLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.wValueLabel.Location = new System.Drawing.Point(410, 349);
+            this.wValueLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.wValueLabel.Name = "wValueLabel";
-            this.wValueLabel.Size = new System.Drawing.Size(57, 17);
+            this.wValueLabel.Size = new System.Drawing.Size(117, 32);
             this.wValueLabel.TabIndex = 40;
             this.wValueLabel.Text = "wValue:";
             this.wValueLabel.Visible = false;
@@ -899,10 +958,10 @@ namespace CyControl
             // TargetLabel
             // 
             this.TargetLabel.AutoSize = true;
-            this.TargetLabel.Location = new System.Drawing.Point(388, 137);
-            this.TargetLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TargetLabel.Location = new System.Drawing.Point(776, 265);
+            this.TargetLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.TargetLabel.Name = "TargetLabel";
-            this.TargetLabel.Size = new System.Drawing.Size(54, 17);
+            this.TargetLabel.Size = new System.Drawing.Size(105, 32);
             this.TargetLabel.TabIndex = 36;
             this.TargetLabel.Text = "Target:";
             this.TargetLabel.Visible = false;
@@ -910,10 +969,10 @@ namespace CyControl
             // ReqTypeLabel
             // 
             this.ReqTypeLabel.AutoSize = true;
-            this.ReqTypeLabel.Location = new System.Drawing.Point(205, 137);
-            this.ReqTypeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ReqTypeLabel.Location = new System.Drawing.Point(410, 265);
+            this.ReqTypeLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.ReqTypeLabel.Name = "ReqTypeLabel";
-            this.ReqTypeLabel.Size = new System.Drawing.Size(69, 17);
+            this.ReqTypeLabel.Size = new System.Drawing.Size(136, 32);
             this.ReqTypeLabel.TabIndex = 34;
             this.ReqTypeLabel.Text = "Req type:";
             this.ReqTypeLabel.Visible = false;
@@ -921,10 +980,10 @@ namespace CyControl
             // DirectionLabel
             // 
             this.DirectionLabel.AutoSize = true;
-            this.DirectionLabel.Location = new System.Drawing.Point(9, 137);
-            this.DirectionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DirectionLabel.Location = new System.Drawing.Point(18, 265);
+            this.DirectionLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.DirectionLabel.Name = "DirectionLabel";
-            this.DirectionLabel.Size = new System.Drawing.Size(68, 17);
+            this.DirectionLabel.Size = new System.Drawing.Size(136, 32);
             this.DirectionLabel.TabIndex = 32;
             this.DirectionLabel.Text = "Direction:";
             this.DirectionLabel.Visible = false;
@@ -938,12 +997,11 @@ namespace CyControl
             "Interface",
             "Endpoint",
             "Other"});
-            this.TargetBox.Location = new System.Drawing.Point(451, 133);
-            this.TargetBox.Margin = new System.Windows.Forms.Padding(4);
+            this.TargetBox.Location = new System.Drawing.Point(902, 258);
+            this.TargetBox.Margin = new System.Windows.Forms.Padding(8);
             this.TargetBox.Name = "TargetBox";
-            this.TargetBox.Size = new System.Drawing.Size(89, 24);
+            this.TargetBox.Size = new System.Drawing.Size(174, 39);
             this.TargetBox.TabIndex = 37;
-            this.TargetBox.SelectedIndex = 0;
             // 
             // ReqTypeBox
             // 
@@ -953,12 +1011,11 @@ namespace CyControl
             "Standard",
             "Class",
             "Vendor"});
-            this.ReqTypeBox.Location = new System.Drawing.Point(280, 133);
-            this.ReqTypeBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ReqTypeBox.Location = new System.Drawing.Point(560, 258);
+            this.ReqTypeBox.Margin = new System.Windows.Forms.Padding(8);
             this.ReqTypeBox.Name = "ReqTypeBox";
-            this.ReqTypeBox.Size = new System.Drawing.Size(95, 24);
+            this.ReqTypeBox.Size = new System.Drawing.Size(186, 39);
             this.ReqTypeBox.TabIndex = 35;
-            this.ReqTypeBox.SelectedIndex = 0;
             // 
             // DirectionBox
             // 
@@ -967,113 +1024,126 @@ namespace CyControl
             this.DirectionBox.Items.AddRange(new object[] {
             "Out",
             "In"});
-            this.DirectionBox.Location = new System.Drawing.Point(101, 133);
-            this.DirectionBox.Margin = new System.Windows.Forms.Padding(4);
+            this.DirectionBox.Location = new System.Drawing.Point(202, 258);
+            this.DirectionBox.Margin = new System.Windows.Forms.Padding(8);
             this.DirectionBox.Name = "DirectionBox";
-            this.DirectionBox.Size = new System.Drawing.Size(55, 24);
+            this.DirectionBox.Size = new System.Drawing.Size(106, 39);
             this.DirectionBox.TabIndex = 33;
-            this.DirectionBox.SelectedIndex =0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 74);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(18, 143);
+            this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 17);
+            this.label3.Size = new System.Drawing.Size(228, 32);
             this.label3.TabIndex = 26;
             this.label3.Text = "Bytes to transfer:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(205, 19);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(410, 37);
+            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 17);
+            this.label2.Size = new System.Drawing.Size(258, 32);
             this.label2.TabIndex = 23;
             this.label2.Text = "Data to send (Hex):";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 19);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(18, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 17);
+            this.label1.Size = new System.Drawing.Size(178, 32);
             this.label1.TabIndex = 22;
             this.label1.Text = "Text to send:";
             // 
-            // FileXferBtn
-            // 
-            this.FileXferBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.FileXferBtn.AutoSize = true;
-            this.FileXferBtn.Enabled = false;
-            this.FileXferBtn.Location = new System.Drawing.Point(121, 7);
-            this.FileXferBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.FileXferBtn.Name = "FileXferBtn";
-            this.FileXferBtn.Size = new System.Drawing.Size(109, 28);
-            this.FileXferBtn.TabIndex = 30;
-            this.FileXferBtn.Text = "Transfer File";
-            this.FileXferBtn.UseVisualStyleBackColor = true;
-            this.FileXferBtn.Visible = false;
-            this.FileXferBtn.Click += new System.EventHandler(this.FileXferBtn_Click);
-            // 
-            // DataXferBtn
-            // 
-            this.DataXferBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.DataXferBtn.AutoSize = true;
-            this.DataXferBtn.Location = new System.Drawing.Point(4, 7);
-            this.DataXferBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.DataXferBtn.Name = "DataXferBtn";
-            this.DataXferBtn.Size = new System.Drawing.Size(109, 28);
-            this.DataXferBtn.TabIndex = 29;
-            this.DataXferBtn.Text = "Transfer Data";
-            this.DataXferBtn.UseVisualStyleBackColor = true;
-            this.DataXferBtn.Click += new System.EventHandler(this.DataXferBtn_Click);
-            // 
             // NumBytesBox
             // 
-            this.NumBytesBox.Location = new System.Drawing.Point(9, 94);
-            this.NumBytesBox.Margin = new System.Windows.Forms.Padding(4);
+            this.NumBytesBox.Location = new System.Drawing.Point(18, 182);
+            this.NumBytesBox.Margin = new System.Windows.Forms.Padding(8);
             this.NumBytesBox.Name = "NumBytesBox";
-            this.NumBytesBox.Size = new System.Drawing.Size(147, 22);
+            this.NumBytesBox.Size = new System.Drawing.Size(290, 38);
             this.NumBytesBox.TabIndex = 27;
             this.NumBytesBox.Text = "512";
             this.NumBytesBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // XferTextBox
             // 
-            this.XferTextBox.Location = new System.Drawing.Point(9, 39);
-            this.XferTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.XferTextBox.Location = new System.Drawing.Point(18, 76);
+            this.XferTextBox.Margin = new System.Windows.Forms.Padding(8);
             this.XferTextBox.MaxLength = 2048;
             this.XferTextBox.Name = "XferTextBox";
-            this.XferTextBox.Size = new System.Drawing.Size(173, 22);
+            this.XferTextBox.Size = new System.Drawing.Size(342, 38);
             this.XferTextBox.TabIndex = 24;
             this.XferTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.XferTextBox_KeyUp);
             // 
             // DriversTab
             // 
+            this.DriversTab.Controls.Add(this.cbHidI2C);
+            this.DriversTab.Controls.Add(this.cbEmpty);
+            this.DriversTab.Controls.Add(this.lblFilter);
             this.DriversTab.Controls.Add(this.label4);
             this.DriversTab.Controls.Add(this.CyUSBDeviceBox);
             this.DriversTab.Controls.Add(this.HIDDeviceBox);
             this.DriversTab.Controls.Add(this.MSCDeviceBox);
-            this.DriversTab.Location = new System.Drawing.Point(4, 25);
-            this.DriversTab.Margin = new System.Windows.Forms.Padding(4);
+            this.DriversTab.Location = new System.Drawing.Point(10, 48);
+            this.DriversTab.Margin = new System.Windows.Forms.Padding(8);
             this.DriversTab.Name = "DriversTab";
-            this.DriversTab.Size = new System.Drawing.Size(561, 581);
+            this.DriversTab.Size = new System.Drawing.Size(1118, 1142);
             this.DriversTab.TabIndex = 2;
             this.DriversTab.Text = "Device Class Selection";
             this.DriversTab.UseVisualStyleBackColor = true;
+            // 
+            // cbHidI2C
+            // 
+            this.cbHidI2C.AutoSize = true;
+            this.cbHidI2C.Checked = true;
+            this.cbHidI2C.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbHidI2C.Location = new System.Drawing.Point(152, 330);
+            this.cbHidI2C.Margin = new System.Windows.Forms.Padding(8);
+            this.cbHidI2C.Name = "cbHidI2C";
+            this.cbHidI2C.Size = new System.Drawing.Size(251, 36);
+            this.cbHidI2C.TabIndex = 15;
+            this.cbHidI2C.Text = "HIDI2C Devices";
+            this.cbHidI2C.UseVisualStyleBackColor = true;
+            this.cbHidI2C.CheckedChanged += new System.EventHandler(this.cbHidI2C_CheckedChanged);
+            // 
+            // cbEmpty
+            // 
+            this.cbEmpty.AutoSize = true;
+            this.cbEmpty.Checked = true;
+            this.cbEmpty.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEmpty.Location = new System.Drawing.Point(152, 384);
+            this.cbEmpty.Margin = new System.Windows.Forms.Padding(8);
+            this.cbEmpty.Name = "cbEmpty";
+            this.cbEmpty.Size = new System.Drawing.Size(388, 36);
+            this.cbEmpty.TabIndex = 13;
+            this.cbEmpty.Text = "Devices with empty names";
+            this.cbEmpty.UseVisualStyleBackColor = true;
+            this.cbEmpty.CheckedChanged += new System.EventHandler(this.cbEmpty_CheckedChanged);
+            // 
+            // lblFilter
+            // 
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilter.Location = new System.Drawing.Point(98, 273);
+            this.lblFilter.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(325, 32);
+            this.lblFilter.TabIndex = 12;
+            this.lblFilter.Text = "Select devices to filter.";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(49, 25);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(98, 48);
+            this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(261, 17);
+            this.label4.Size = new System.Drawing.Size(486, 32);
             this.label4.TabIndex = 11;
             this.label4.Text = "Select the USB devices of interest.";
             // 
@@ -1082,10 +1152,10 @@ namespace CyControl
             this.CyUSBDeviceBox.AutoSize = true;
             this.CyUSBDeviceBox.Checked = true;
             this.CyUSBDeviceBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CyUSBDeviceBox.Location = new System.Drawing.Point(76, 53);
-            this.CyUSBDeviceBox.Margin = new System.Windows.Forms.Padding(4);
+            this.CyUSBDeviceBox.Location = new System.Drawing.Point(152, 103);
+            this.CyUSBDeviceBox.Margin = new System.Windows.Forms.Padding(8);
             this.CyUSBDeviceBox.Name = "CyUSBDeviceBox";
-            this.CyUSBDeviceBox.Size = new System.Drawing.Size(395, 21);
+            this.CyUSBDeviceBox.Size = new System.Drawing.Size(776, 36);
             this.CyUSBDeviceBox.TabIndex = 10;
             this.CyUSBDeviceBox.Text = "Devices served by the CyUSB3.sys driver (or a derivative)";
             this.CyUSBDeviceBox.UseVisualStyleBackColor = true;
@@ -1094,11 +1164,12 @@ namespace CyControl
             // HIDDeviceBox
             // 
             this.HIDDeviceBox.AutoSize = true;
-            this.HIDDeviceBox.Enabled = false;
-            this.HIDDeviceBox.Location = new System.Drawing.Point(76, 110);
-            this.HIDDeviceBox.Margin = new System.Windows.Forms.Padding(4);
+            this.HIDDeviceBox.Checked = true;
+            this.HIDDeviceBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.HIDDeviceBox.Location = new System.Drawing.Point(152, 213);
+            this.HIDDeviceBox.Margin = new System.Windows.Forms.Padding(8);
             this.HIDDeviceBox.Name = "HIDDeviceBox";
-            this.HIDDeviceBox.Size = new System.Drawing.Size(225, 21);
+            this.HIDDeviceBox.Size = new System.Drawing.Size(441, 36);
             this.HIDDeviceBox.TabIndex = 9;
             this.HIDDeviceBox.Text = "Human Interface Devices (HID)";
             this.HIDDeviceBox.UseVisualStyleBackColor = true;
@@ -1107,11 +1178,12 @@ namespace CyControl
             // MSCDeviceBox
             // 
             this.MSCDeviceBox.AutoSize = true;
-            this.MSCDeviceBox.Enabled = false;
-            this.MSCDeviceBox.Location = new System.Drawing.Point(76, 81);
-            this.MSCDeviceBox.Margin = new System.Windows.Forms.Padding(4);
+            this.MSCDeviceBox.Checked = true;
+            this.MSCDeviceBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.MSCDeviceBox.Location = new System.Drawing.Point(152, 157);
+            this.MSCDeviceBox.Margin = new System.Windows.Forms.Padding(8);
             this.MSCDeviceBox.Name = "MSCDeviceBox";
-            this.MSCDeviceBox.Size = new System.Drawing.Size(209, 21);
+            this.MSCDeviceBox.Size = new System.Drawing.Size(413, 36);
             this.MSCDeviceBox.TabIndex = 8;
             this.MSCDeviceBox.Text = "Mass Storage Class Devices";
             this.MSCDeviceBox.UseVisualStyleBackColor = true;
@@ -1128,39 +1200,20 @@ namespace CyControl
             // 
             this.FSave.Title = "Save the script file as";
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.AutoSize = true;
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Controls.Add(this.DataXferBtn, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.FileXferBtn, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Clear, 2, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(186, 210);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(354, 42);
-            this.tableLayoutPanel2.TabIndex = 44;
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(899, 683);
+            this.ClientSize = new System.Drawing.Size(1798, 1323);
             this.Controls.Add(this.Split1);
             this.Controls.Add(this.StatusBar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(907, 723);
+            this.Margin = new System.Windows.Forms.Padding(8);
+            this.MinimumSize = new System.Drawing.Size(1782, 1318);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "USB Control Center";
@@ -1174,6 +1227,7 @@ namespace CyControl
             this.StatusBar.PerformLayout();
             this.Split1.Panel1.ResumeLayout(false);
             this.Split1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Split1)).EndInit();
             this.Split1.ResumeLayout(false);
             this.gb.ResumeLayout(false);
             this.gb.PerformLayout();
@@ -1185,10 +1239,10 @@ namespace CyControl
             this.tableLayoutPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.DriversTab.ResumeLayout(false);
-            this.DriversTab.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.DriversTab.ResumeLayout(false);
+            this.DriversTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1277,8 +1331,9 @@ namespace CyControl
         private System.Windows.Forms.TextBox NumBytesBox;
         private System.Windows.Forms.TextBox XferTextBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-
-
+        private System.Windows.Forms.CheckBox cbHidI2C;
+        private System.Windows.Forms.CheckBox cbEmpty;
+        private System.Windows.Forms.Label lblFilter;
     }
 }
 
