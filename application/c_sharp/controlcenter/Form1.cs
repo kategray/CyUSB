@@ -3068,6 +3068,14 @@ namespace CyControl
         {
             RefreshDeviceTree();
         }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            if ("" != DescText.Text) {
+                Clipboard.SetText(DescText.Text);
+                MessageBox.Show("Copied descriptor information to clipboard.", "Copied to clipboard", MessageBoxButtons.OK);
+            }
+        }
     }
 
     public class MyThread : Form1

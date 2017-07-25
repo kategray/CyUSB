@@ -188,8 +188,6 @@ namespace CyControl
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.DeviceTreeView = new System.Windows.Forms.TreeView();
             this.TabPages = new System.Windows.Forms.TabControl();
-            this.DescrTab = new System.Windows.Forms.TabPage();
-            this.DescText = new System.Windows.Forms.TextBox();
             this.XferTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.OutputBox = new System.Windows.Forms.TextBox();
@@ -227,6 +225,10 @@ namespace CyControl
             this.MSCDeviceBox = new System.Windows.Forms.CheckBox();
             this.FOpenDialog = new System.Windows.Forms.OpenFileDialog();
             this.FSave = new System.Windows.Forms.SaveFileDialog();
+            this.DescrTab = new System.Windows.Forms.TabPage();
+            this.split2 = new System.Windows.Forms.SplitContainer();
+            this.DescText = new System.Windows.Forms.TextBox();
+            this.btnCopy = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.StatusBar.SuspendLayout();
@@ -236,12 +238,16 @@ namespace CyControl
             this.Split1.SuspendLayout();
             this.gb.SuspendLayout();
             this.TabPages.SuspendLayout();
-            this.DescrTab.SuspendLayout();
             this.XferTab.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.DriversTab.SuspendLayout();
+            this.DescrTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.split2)).BeginInit();
+            this.split2.Panel1.SuspendLayout();
+            this.split2.Panel2.SuspendLayout();
+            this.split2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -713,32 +719,6 @@ namespace CyControl
             this.TabPages.TabIndex = 0;
             this.TabPages.SelectedIndexChanged += new System.EventHandler(this.Form1_Resize);
             // 
-            // DescrTab
-            // 
-            this.DescrTab.Controls.Add(this.DescText);
-            this.DescrTab.Location = new System.Drawing.Point(10, 48);
-            this.DescrTab.Margin = new System.Windows.Forms.Padding(8);
-            this.DescrTab.Name = "DescrTab";
-            this.DescrTab.Padding = new System.Windows.Forms.Padding(8);
-            this.DescrTab.Size = new System.Drawing.Size(1118, 1142);
-            this.DescrTab.TabIndex = 0;
-            this.DescrTab.Text = "Descriptor Info";
-            this.DescrTab.UseVisualStyleBackColor = true;
-            // 
-            // DescText
-            // 
-            this.DescText.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.DescText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DescText.Location = new System.Drawing.Point(8, 8);
-            this.DescText.Margin = new System.Windows.Forms.Padding(8);
-            this.DescText.Multiline = true;
-            this.DescText.Name = "DescText";
-            this.DescText.ReadOnly = true;
-            this.DescText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DescText.Size = new System.Drawing.Size(1102, 1126);
-            this.DescText.TabIndex = 0;
-            this.DescText.WordWrap = false;
-            // 
             // XferTab
             // 
             this.XferTab.BackColor = System.Drawing.Color.Gainsboro;
@@ -1200,6 +1180,62 @@ namespace CyControl
             // 
             this.FSave.Title = "Save the script file as";
             // 
+            // DescrTab
+            // 
+            this.DescrTab.Controls.Add(this.split2);
+            this.DescrTab.Location = new System.Drawing.Point(10, 48);
+            this.DescrTab.Margin = new System.Windows.Forms.Padding(8);
+            this.DescrTab.Name = "DescrTab";
+            this.DescrTab.Padding = new System.Windows.Forms.Padding(8);
+            this.DescrTab.Size = new System.Drawing.Size(1118, 1142);
+            this.DescrTab.TabIndex = 0;
+            this.DescrTab.Text = "Descriptor Info";
+            this.DescrTab.UseVisualStyleBackColor = true;
+            // 
+            // split2
+            // 
+            this.split2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.split2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.split2.Location = new System.Drawing.Point(8, 8);
+            this.split2.Name = "split2";
+            this.split2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // split2.Panel1
+            // 
+            this.split2.Panel1.Controls.Add(this.DescText);
+            // 
+            // split2.Panel2
+            // 
+            this.split2.Panel2.Controls.Add(this.btnCopy);
+            this.split2.Size = new System.Drawing.Size(1102, 1126);
+            this.split2.SplitterDistance = 1047;
+            this.split2.TabIndex = 0;
+            // 
+            // DescText
+            // 
+            this.DescText.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.DescText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DescText.Location = new System.Drawing.Point(0, 0);
+            this.DescText.Margin = new System.Windows.Forms.Padding(8);
+            this.DescText.Multiline = true;
+            this.DescText.Name = "DescText";
+            this.DescText.ReadOnly = true;
+            this.DescText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DescText.Size = new System.Drawing.Size(1102, 1047);
+            this.DescText.TabIndex = 1;
+            this.DescText.WordWrap = false;
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCopy.Location = new System.Drawing.Point(0, 0);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(1102, 75);
+            this.btnCopy.TabIndex = 1;
+            this.btnCopy.Text = "Copy Descriptor";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
@@ -1232,8 +1268,6 @@ namespace CyControl
             this.gb.ResumeLayout(false);
             this.gb.PerformLayout();
             this.TabPages.ResumeLayout(false);
-            this.DescrTab.ResumeLayout(false);
-            this.DescrTab.PerformLayout();
             this.XferTab.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -1243,6 +1277,12 @@ namespace CyControl
             this.tableLayoutPanel2.PerformLayout();
             this.DriversTab.ResumeLayout(false);
             this.DriversTab.PerformLayout();
+            this.DescrTab.ResumeLayout(false);
+            this.split2.Panel1.ResumeLayout(false);
+            this.split2.Panel1.PerformLayout();
+            this.split2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.split2)).EndInit();
+            this.split2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1262,9 +1302,7 @@ namespace CyControl
         private System.Windows.Forms.SplitContainer Split1;
         private System.Windows.Forms.TreeView DeviceTreeView;
         private System.Windows.Forms.TabControl TabPages;
-        private System.Windows.Forms.TabPage DescrTab;
         private System.Windows.Forms.TabPage XferTab;
-        private System.Windows.Forms.TextBox DescText;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem programFX2ToolStripMenuItem;
         public System.Windows.Forms.OpenFileDialog FOpenDialog;
@@ -1334,6 +1372,10 @@ namespace CyControl
         private System.Windows.Forms.CheckBox cbHidI2C;
         private System.Windows.Forms.CheckBox cbEmpty;
         private System.Windows.Forms.Label lblFilter;
+        private System.Windows.Forms.TabPage DescrTab;
+        private System.Windows.Forms.SplitContainer split2;
+        private System.Windows.Forms.TextBox DescText;
+        private System.Windows.Forms.Button btnCopy;
     }
 }
 

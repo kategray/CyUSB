@@ -6,6 +6,7 @@
 *.force
 *.cache
 *.txt
+*.config
 .vs/
 
 # Reports
